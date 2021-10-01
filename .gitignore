@@ -1,3 +1,9 @@
+# JetBrains
+.idea
+
+# images
+/store
+
 # Logs
 logs
 *.log
