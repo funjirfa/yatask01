@@ -1,0 +1,22 @@
+{
+  "name": "ya_task1_nodejs",
+  "version": "1.0.0",
+  "description": "nodejs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/launcher.js"
+  },
+  "author": "fedoryan",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "image-size": "^1.0.0",
+    "moment": "^2.29.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "nanoid": "^3.1.28",
+    "winston": "^3.3.3"
+  }
+}
