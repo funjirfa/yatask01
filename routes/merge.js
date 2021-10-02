@@ -46,6 +46,7 @@ module.exports = async (req, res) => {
 
         logger.info(`MERGE :: ${front} + ${back}`);
         res.header('Content-Type', 'image/jpeg');
+        res.type('image/jpeg');
         readableStream.pipe(res);
       }
     );
