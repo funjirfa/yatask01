@@ -56,7 +56,7 @@ class Database extends EventEmitter {
   find() {
     let allJpeg = Object.values(this.imageData).map((jpeg) => jpeg.export());
 
-    allJpeg.sort((jpegA, jpegB) => jpegB.createdAt - jpegA.createdAt);
+    allJpeg.sort((jpegA, jpegB) => (jpegA.createdAt > jpegB.createdAt) ? 1 : ((jpegA.createdAt < jpegB.createdAt) ? -1 : 0));
 
     return allJpeg;
   }

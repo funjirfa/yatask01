@@ -5,6 +5,7 @@ const upload = require('./upload');
 const list = require('./list');
 const download = require('./download');
 const remove = require('./delete');
+const merge = require('./merge');
 
 const router = Router();
 
@@ -23,6 +24,6 @@ router
 
 router
   .route('/merge')
-  .get();
+  .get(merge);
 
 module.exports = router;
