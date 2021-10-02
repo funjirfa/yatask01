@@ -15,6 +15,13 @@ module.exports = async (req, res) => {
   try {
     const jpegId = req.params.id;
     const jpeg = await db.findOne(jpegId);
+
+    if (!jpeg) {
+      logger.error(`DOWNLOAD :: id ${jpegId} not found`);
+      res.status(404).json({ error: `id ${jpegId} not found` });
+      return;
+    }
+
     logger.info(`DOWNLOAD :: ${jpegId}`);
     res.status(200).download(path.resolve(images, jpeg.id));
   } catch (error) {
