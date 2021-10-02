@@ -40,13 +40,13 @@ module.exports = async (req, res) => {
 
     replaceBackground(imgFront, imgBack, color ? color.split(',').map(Number) : [255, 0, 0], threshold || 0).then(
       (readableStream) => {
-        // const writableStream = fs.createWriteStream(
-        //   path.resolve(__dirname, "./result/result.jpg")
-        // );
-
         logger.info(`MERGE :: ${front} + ${back}`);
         res.header('Content-Type', 'image/jpeg');
         res.type('image/jpeg');
+
+        // const writableStream = fs.createWriteStream(
+        //   path.resolve(images, "./result/result.jpg")
+        // );
         readableStream.pipe(res);
       }
     );

@@ -23,6 +23,7 @@ module.exports = async (req, res) => {
     }
 
     logger.info(`DOWNLOAD :: ${jpegId}`);
+    res.type('image/jpeg');
     res.status(200).download(path.resolve(images, jpeg.id));
   } catch (error) {
     logger.error(`DOWNLOAD :: ${error.name} * ${error.message}`);
